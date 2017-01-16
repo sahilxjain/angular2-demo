@@ -1,4 +1,4 @@
-System.register(["angular2/core"], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,31 +11,27 @@ System.register(["angular2/core"], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var App;
+    var LoopBackEventComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            //framework recognizes @Component annotation and knows that we are trying to create a new component
-            App = (function () {
-                function App() {
+            LoopBackEventComponent = (function () {
+                function LoopBackEventComponent() {
                 }
-                App = __decorate([
+                LoopBackEventComponent = __decorate([
                     core_1.Component({
-                        selector: 'app' //specifies selector for HTML element named 'app'
-                    }),
-                    core_1.View({
-                        //template property holds component's companion template that tells Angular how to render a view
-                        template: '<h2>Welcome toooo {{name}}</h2>'
+                        selector: 'loop-back-event',
+                        template: "\n    <h2>Get user input from a local template variable</h2>\n\n    <!--declare a local template variable by preceding an identifier with a hash character (#)-->\n    <input #key_val (keyup)=\"0\">\n\n    <!-- The key_val variable is a reference to the <input> element itself, and grab the input element's value and display it with interpolation between <p> tags -->\n    <p>{{key_val.value}}</p>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
-                ], App);
-                return App;
+                ], LoopBackEventComponent);
+                return LoopBackEventComponent;
             }());
-            exports_1("App", App);
+            exports_1("LoopBackEventComponent", LoopBackEventComponent);
         }
     }
 });
-//# sourceMappingURL=component_app.component.js.map
+//# sourceMappingURL=loop_back.component.js.map

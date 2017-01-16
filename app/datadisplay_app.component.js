@@ -11,31 +11,32 @@ System.register(["angular2/core"], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var App;
+    var MyTemplate;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            //framework recognizes @Component annotation and knows that we are trying to create a new component
-            App = (function () {
-                function App() {
+            MyTemplate = (function () {
+                function MyTemplate() {
+                    this.fruits = ['Apple', 'Orange', 'Mango', 'Grapes'];
+                    this.myfruit = this.fruits[1];
+                    this.capital = 'New Delhi';
                 }
-                App = __decorate([
+                MyTemplate = __decorate([
                     core_1.Component({
-                        selector: 'app' //specifies selector for HTML element named 'app'
+                        selector: 'my-app'
                     }),
                     core_1.View({
-                        //template property holds component's companion template that tells Angular how to render a view
-                        template: '<h2>Welcome toooo {{name}}</h2>'
+                        template: "\n    <h2>Showing data using component properties with interpolation</h2>\n    <h3>Player Name:{{player}}</h3>\n    <h3>He is famous in: {{sport}}</h3><br>\n\n    <h2>Showing data using constructor or variable initialization</h2>\n    <h3>India capital is: {{capital}}</h3><br>\n\n    <h2>Showing data using array property with NgFor</h2>\n    <h3>My favorite fruit is: {{myfruit}}</h3>\n    <p>List of Fruits:</p>\n    <ul>\n       <li *ngFor=\"#fruit of fruits\">\n          {{ fruit }}\n       </li>\n    </ul>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
-                ], App);
-                return App;
+                ], MyTemplate);
+                return MyTemplate;
             }());
-            exports_1("App", App);
+            exports_1("MyTemplate", MyTemplate);
         }
     }
 });
-//# sourceMappingURL=component_app.component.js.map
+//# sourceMappingURL=datadisplay_app.component.js.map

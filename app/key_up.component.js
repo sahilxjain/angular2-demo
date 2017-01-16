@@ -1,4 +1,4 @@
-System.register(["angular2/core"], function(exports_1, context_1) {
+System.register(['angular2/core'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -11,31 +11,33 @@ System.register(["angular2/core"], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var App;
+    var KeyUpComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            //framework recognizes @Component annotation and knows that we are trying to create a new component
-            App = (function () {
-                function App() {
+            KeyUpComponent = (function () {
+                function KeyUpComponent() {
+                    this.val = '';
                 }
-                App = __decorate([
+                KeyUpComponent.prototype.onKey = function (event) {
+                    // console.log(event.target.value);
+                    // event is a large objet
+                    this.val += (event.target).value + ' | ';
+                };
+                KeyUpComponent = __decorate([
                     core_1.Component({
-                        selector: 'app' //specifies selector for HTML element named 'app'
-                    }),
-                    core_1.View({
-                        //template property holds component's companion template that tells Angular how to render a view
-                        template: '<h2>Welcome toooo {{name}}</h2>'
+                        selector: 'my-key',
+                        template: "<h2>Key Up Event Example</h2>\n    <input (keyup)=\"onKey($event)\">\n    <p>{{val}}</p>\n  "
                     }), 
                     __metadata('design:paramtypes', [])
-                ], App);
-                return App;
+                ], KeyUpComponent);
+                return KeyUpComponent;
             }());
-            exports_1("App", App);
+            exports_1("KeyUpComponent", KeyUpComponent);
         }
     }
 });
-//# sourceMappingURL=component_app.component.js.map
+//# sourceMappingURL=key_up.component.js.map

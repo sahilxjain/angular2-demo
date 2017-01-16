@@ -1,4 +1,4 @@
-System.register(["angular2/core"], function(exports_1, context_1) {
+System.register(['angular2/core', './shopping-list.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,32 +10,32 @@ System.register(["angular2/core"], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1;
-    var App;
+    var core_1, shopping_list_component_1;
+    var AppComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (shopping_list_component_1_1) {
+                shopping_list_component_1 = shopping_list_component_1_1;
             }],
         execute: function() {
-            //framework recognizes @Component annotation and knows that we are trying to create a new component
-            App = (function () {
-                function App() {
+            AppComponent = (function () {
+                function AppComponent() {
                 }
-                App = __decorate([
+                AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'app' //specifies selector for HTML element named 'app'
-                    }),
-                    core_1.View({
-                        //template property holds component's companion template that tells Angular how to render a view
-                        template: '<h2>Welcome toooo {{name}}</h2>'
+                        selector: 'my-app',
+                        template: "\n    <my-list></my-list>\n    ",
+                        directives: [shopping_list_component_1.ItemListComponent]
                     }), 
                     __metadata('design:paramtypes', [])
-                ], App);
-                return App;
+                ], AppComponent);
+                return AppComponent;
             }());
-            exports_1("App", App);
+            exports_1("AppComponent", AppComponent);
         }
     }
 });
-//# sourceMappingURL=component_app.component.js.map
+//# sourceMappingURL=app.component.js.map
