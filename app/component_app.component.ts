@@ -8,7 +8,7 @@ import {Component, View} from "angular2/core";
 
 @View({
   //template property holds component's companion template that tells Angular how to render a view
-  template: '<h2>Welcome toooo {{name}}</h2>'
+  template: '<h2>Welcome to {{name}}</h2>'
 })
 
 export class App {
