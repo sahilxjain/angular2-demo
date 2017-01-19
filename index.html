@@ -3,15 +3,6 @@
   <head>
     <title>Hello World</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2-polyfills.js"></script>
-    <script src="https://code.angularjs.org/tools/system.js"></script>
-    <script src="https://code.angularjs.org/tools/typescript.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.6/Rx.js"></script>
-    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2.dev.js"></script> -->
-
-
-    <!-- <script src="js/es6-shim.min.js"></script> -->
     <script src="js/system-polyfills.js"></script>
     <script src="js/angular2-polyfills.js"></script>
     <script src="js/system.js"></script>
@@ -36,3 +27,33 @@
    <my-app>Loading...</my-app>
 </body>
 </html>
+
+<!--
+- app                   # your app source code (and specs)
+- index.html            # the entry point to your app
+- styles.css            # the global styles for your app
+
+// dependencies
+- package.json          # the manifest of your app that states all dependencies 
+- systemjs.config.js    # system.js modules configuration
+
+// TypeScript configuration
+- tsconfig.json         # TypeScript compiler configuration
+- typings.json          # typings configuration (for the TS compiler)
+- tslint.json           # TypeScript linting configuration
+
+// Testing
+- e2e                   # a folder with end to end tests
+- karma.conf.js         # karma test runner configuration
+- protractor.config.js  # protractor e2e tests configuration
+- karma-test-shim.js
+- wallaby.js
+
+- .gitignore
+- CHANGELOG.md
+- LICENSE
+- README.md
+- Dockerfile
+- favicon.ico
+
+-->
