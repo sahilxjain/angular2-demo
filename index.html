@@ -25,7 +25,7 @@
         transpiler: 'typescript', //transpiler tool converts TypeScript to JavaScript
         typescriptOptions: { emitDecoratorMetadata: true }, //emitDecoratorMetadata flag used by JavaScript output to create metadata from the decorators
         packages: {'app': {defaultExtension: 'ts'}},
-        map: { 'app': './app' }
+        map: { 'app': './app' } // map tells the System loader where to look for things
       });
       System.import('./app/my-component-main')
             .then(null, console.error.bind(console));

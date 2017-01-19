@@ -1,0 +1,1 @@
+import {NgModule} from 'angular2/core';
