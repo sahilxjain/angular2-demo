@@ -1,38 +1,43 @@
 import {Component} from "angular2/core";
-import {People} from "./people"
+import {Person} from "./person"
 import {PeopleService} from "./people.service"
-
+import {PeopleListComponent} from "./people-list.component"
 
 @Component({
     selector: 'my-app',
-    template: `<h1>First App By {{name}} </h1>
+    template: `<h1>My First {{app}} App</h1>
+                <h1> {{title}} </h1>
+    
         <ul>
-            <li *ngFor="#person of people" [class.selected]="person === selected" (click)="onClick(person)" >{{person.firstname}} {{person.lastname}}</li>
+            <li *ngFor="#person of people" [class.selected]="person === selected" (click)="onClick(person)" >{{person.name}} {{person.height}}</li>
         </ul>
 
-        <div style="border:2px solid; display: inline-block;" class="details" *ngIf="selected.firstname" >{{selected.firstname}} {{selected.lastname}}</div> 
+        <div style="border:2px solid; display: inline-block;" class="details" *ngIf="selected.name" >{{selected.name}} {{selected.height}}</div> 
+
+         <people-list></people-list>
     `,
     styleUrls: ['app/src/css/my-component.css'],
     providers: [PeopleService]
 })
 
-export class MyComponentComponent {
+export class AppComponent {
 
-    public name:string = 'Demo User';
+    app:string = 'Angular';
+    title:string = 'Star Wars PPlz!!!';
 
 
     // Directly Using static data without an service
 
     // public contacts:People[] = [
-    //     {firstname:"Luke",lastname:"Skywalker"},
-    //     {firstname:"Darth",lastname:"Vader"},
-    //     {firstname:"Han",lastname:"Solo"}
+    //   {name: 'Luke Skywalker', height: 177, weight: 70},
+    //   {name: 'Darth Vader', height: 200, weight: 100},
+    //   {name: 'Han Solo', height: 185, weight: 85}
     // ];
 
     // Now importing above data with a service
 
     // this shorthand syntax automatically creates and initializes a new private member in the class
-    people: People[] = []; // intialise variable people with class people defined in people.ts
+    people: Person[] = []; // intialise variable people with class people defined in people.ts
     constructor(private _peopleService: PeopleService){
         this.people = _peopleService.getAll();
     }

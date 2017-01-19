@@ -1,11 +1,11 @@
-import { People } from './people';
+import {Person} from './person';
 
 export class PeopleService{
-  getAll() : People[] {
+  getAll() : Person[] {
     return [
-        {firstname:"Luke",lastname:"Skywalker"},
-        {firstname:"Darth",lastname:"Vader"},
-        {firstname:"Han",lastname:"Solo"}
+      {name: 'Luke Skywalker', height: 177, weight: 70},
+      {name: 'Darth Vader', height: 200, weight: 100},
+      {name: 'Han Solo', height: 185, weight: 85}
     ];
   }
 
