@@ -9,15 +9,15 @@ import {Component} from "angular2/core";
 
         <div style="border:2px solid; display: inline-block;" class="details" *ngIf="selected.firstname" >{{selected.firstname}} {{selected.lastname}}</div> 
     `,
-    styleUrls: ['src/css/my-component.css']
+    styleUrls: ['app/src/css/my-component.css']
 })
 
 export class MyComponentComponent {
-    public name = 'Sahil Jain';
+    public name = 'Demo User';
     public contacts = [
-        {firstname:"sahil",lastname:"Jain"},
-        {firstname:"Vishal",lastname:"Kumar"},
-        {firstname:"Rohit",lastname:"Dhiman"}
+        {firstname:"Demo",lastname:"User"},
+        {firstname:"Test",lastname:"Users"},
+        {firstname:"Tests",lastname:"Useer"}
     ];
 
     selected = [];
